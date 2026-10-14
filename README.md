@@ -4,7 +4,9 @@
 
 Built for community operations teams: every view favours clear insights, qualitative trend labels and operator-controlled spend over a raw content firehose.
 
-> ACID is a private, invite-only dashboard. There is no public deployment.
+**[Live at acid-intel.netlify.app](https://acid-intel.netlify.app/)** · private terminal, sign-in restricted to authorised accounts
+
+![ACID sign-in](screenshots/login_desktop_dark.png)
 
 ## Features
 
@@ -51,6 +53,14 @@ Built for community operations teams: every view favours clear insights, qualita
 - Multi-layer caching to avoid paying twice for the same data
 - Built-in Methodology and Coverage drawers explaining how every number is produced
 - Keyboard shortcuts
+
+## Screenshots
+
+The dashboard sits behind Google sign-in, so only the sign-in screen is publicly visible.
+
+| Desktop | Mobile |
+| --- | --- |
+| ![Sign-in, desktop](screenshots/login_desktop_dark.png) | ![Sign-in, mobile](screenshots/login_mobile_dark.png) |
 
 ## Architecture
 

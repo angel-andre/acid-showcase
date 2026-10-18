@@ -1,10 +1,10 @@
 # ACID
 
-**Aptos Community Intelligence Dashboard.** A real-time social and ecosystem intelligence console for the [Aptos](https://aptoslabs.com/) blockchain. ACID watches X activity across core Aptos accounts, ecosystem partners and competitors, then turns it into executive-ready sentiment, narrative and risk insights, alongside on-chain, market and developer data.
+**Aptos Community Intelligence Dashboard.** A social and ecosystem intelligence console for the [Aptos](https://aptosnetwork.com/) community. ACID follows the public conversation on X about core Aptos accounts, ecosystem partners and competitors, and turns it into executive-ready sentiment, narrative and risk insights, alongside on-chain, market and developer data.
 
-Built for community operations teams: every view favours clear insights, qualitative trend labels and operator-controlled spend over a raw content firehose.
+Made for community teams: every view favours clear insights and plain trend labels over a raw content firehose.
 
-**[Live at acid-intel.netlify.app](https://acid-intel.netlify.app/)** · private terminal, sign-in restricted to authorised accounts
+**Private tool** · sign-in restricted to authorised accounts
 
 ![ACID sign-in](screenshots/login_desktop_dark.png)
 
@@ -12,11 +12,11 @@ Built for community operations teams: every view favours clear insights, qualita
 
 ### Command Center
 - Feed of high-engagement posts from all tracked accounts, filterable by Core, Ecosystem and Competitors
-- On-demand analysis of any post: fetches its replies and scores community sentiment
+- On-demand analysis of any post: community sentiment in its replies
 - Executive headline, risk and opportunity cards and recommended actions
 - Positive and negative themes with momentum (rising, stable, declining)
 - Aptos Pulse community health gauge and historical sentiment trend chart
-- Live, cached and error indicators on every data view
+- Freshness and status indicators on every view
 
 ### Project View
 - Tabs for core accounts, ecosystem partners, competitors and flagship projects
@@ -47,40 +47,18 @@ Built for community operations teams: every view favours clear insights, qualita
 - PDF export
 
 ### Operator Controls
-- Manual-first: no background fetching, every external call is operator-initiated
-- Per-category refresh with cost estimates, cooldowns and session budget warnings
-- Standard and Comprehensive Scan modes to trade depth against cost
-- Multi-layer caching to avoid paying twice for the same data
-- Built-in Methodology and Coverage drawers explaining how every number is produced
+- Refresh on demand, one category at a time
+- Standard and Comprehensive Scan modes, from a quick look to a deep dive
+- Methodology and Coverage notes explaining what every number means
 - Keyboard shortcuts
 
 ## Screenshots
 
-The dashboard sits behind Google sign-in, so only the sign-in screen is publicly visible.
+The dashboard sits behind sign-in, so only the sign-in screen is publicly visible.
 
 | Desktop | Mobile |
 | --- | --- |
 | ![Sign-in, desktop](screenshots/login_desktop_dark.png) | ![Sign-in, mobile](screenshots/login_mobile_dark.png) |
-
-## Architecture
-
-```mermaid
-flowchart LR
-    UI["React dashboard<br/>(single-page app)"] --> EF["Serverless edge functions"]
-    UI --- LC["Browser cache"]
-    EF --> CACHE["Server-side cache"]
-    EF --> X["X API"]
-    EF --> AN["Language-model analysis"]
-    EF --> CHAIN["Aptos network APIs"]
-    EF --> MKT["DeFi and market data APIs"]
-    EF --> GH["GitHub API"]
-    EF --> DB[("Postgres<br/>analysis history")]
-```
-
-- **Front end**: a React and TypeScript single-page app built with Vite, styled with Tailwind CSS
-- **Backend**: serverless edge functions that proxy every external call, so API credentials never reach the browser
-- **Data**: X for social signals, Aptos network APIs, public DeFi, market and GitHub data
-- **Storage**: Postgres for historical analysis snapshots, plus server-side and browser caching
 
 ## Credits
 
